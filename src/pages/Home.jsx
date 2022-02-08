@@ -1,18 +1,12 @@
 import React from "react";
-import PostInfo from "../component/PostInfo";
+import PostList from "../component/PostList";
+
 const Home = (props) => {
   return (
-    <div>
+    <div className="Home">
       <h1>React Forum</h1>
-      {props.postList.map((post, i) => {
-        return (
-          <ul>
-            <PostInfo {...post} key={i} />
-          </ul>
-        );
-      })}
+      <PostList posts={props.postList} comments={props.comments} />
     </div>
   );
 };
-
 export default Home;
